@@ -113,7 +113,7 @@ function mapTest (options, date, test, index) {
         fullResolutionScreenshot: false,
         jpegQuality: 85,
         disableJavaScript: false,
-        ignoreSSL: false,
+        ignoreSSL: true,
         saveResponseBodies: true,
         keepOriginalUserAgent: false,
         blockAds: false,
