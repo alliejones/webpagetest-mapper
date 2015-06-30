@@ -31,14 +31,14 @@ render = require('../../templates').compile(path.join(__dirname, 'template.html'
 packageInfo = require('../../../package.json');
 
 views = [ 'firstView', 'repeatView' ];
-metrics = [ 'TTFB', 'render', 'loadTime', 'SpeedIndex' ];
+metrics = [ 'TTFB', 'render', 'loadTime'/*, 'SpeedIndex'*/ ];
 names = {
     firstView: 'First view',
     repeatView: 'Repeat view',
     TTFB: 'First-byte time',
     render: 'Start-render time',
-    loadTime: 'Load event time',
-    SpeedIndex: 'Speed index'
+    loadTime: 'Load event time'/*,
+    SpeedIndex: 'Speed index'*/
 };
 
 chartWidth = 360;
