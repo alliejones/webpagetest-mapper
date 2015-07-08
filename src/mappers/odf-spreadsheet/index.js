@@ -95,9 +95,8 @@ function mapResult (log, result) {
 }
 
 function mapRuns (result) {
-    var metricIndex, runs;
+    var runs;
 
-    metricIndex = 0;
     runs = [];
 
     views.forEach(function (view) {
@@ -124,8 +123,8 @@ function mapRuns (result) {
             };
         }
 
+        var metricIndex = metrics.indexOf(metric) + views.indexOf(view) * metrics.length;
         runs[runIndex].metrics[metricIndex] = getMetric(view, metric, runId);
-        metricIndex = (metricIndex + 1) % metricsLength;
     }
 
     function getMetric (view, metric, runId) {
