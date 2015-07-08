@@ -174,12 +174,10 @@ function getBrowser (results) {
     var data;
 
     try {
-        data = results.data[0].TTFB.data.runs[0].firstView;
-
-        if (check.unemptyString(data.browser_name)) {
-            return (data.browser_name + ' ' + data.browser_version).trim();
-        }
-    } catch (error) {
+        data = results.data[0].TTFB.data.location.split(':')[1];
+		return data;
+    }
+	catch (error) {
     }
 }
 
