@@ -175,7 +175,7 @@ function getBrowser (results) {
 
     try {
         data = results.data[0].TTFB.data.location.split(':')[1];
-		return data;
+        return data;
     }
 	catch (error) {
     }
