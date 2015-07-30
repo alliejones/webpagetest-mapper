@@ -100,7 +100,7 @@ function mapTest (options, date, test, index) {
         location: options.location,
         runs: options.count,
         firstViewOnly: false,
-        label: getTestLabel(date, test.name, index),
+        label: getTestLabel(options.label, date, test.name, index),
         private: false,
         video: true,
         connectivity: options.connection,
@@ -113,7 +113,7 @@ function mapTest (options, date, test, index) {
         fullResolutionScreenshot: false,
         jpegQuality: 85,
         disableJavaScript: false,
-        ignoreSSL: true,
+        ignoreSSL: options.ignoreSSL,
         saveResponseBodies: true,
         keepOriginalUserAgent: false,
         blockAds: false,
@@ -133,7 +133,10 @@ function mapTest (options, date, test, index) {
     };
 }
 
-function getTestLabel (date, name, index) {
+function getTestLabel (label, date, name, index) {
+    if (label) {
+        return label + name.toLowerCase().replace(' ', '-');
+    }
     return [
         date.getFullYear() +
             formatNumber(date.getMonth() + 1) +

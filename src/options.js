@@ -40,6 +40,8 @@ defaults = {
     resultIds: undefined,
     mapper: 'html-comparison',
     silent: undefined,
+    label: undefined,
+    ignoreSSL: true,
     log: { info: nop, warn: nop, error: nop }
 };
 
