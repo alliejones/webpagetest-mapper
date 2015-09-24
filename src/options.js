@@ -185,8 +185,12 @@ function populateObject (object, defaultValues) {
 }
 
 function getTests (options) {
-    var tests = readJSON(options.tests, defaults.tests);
+    var tests = options.tests;
 
+    if(! Array.isArray(tests)) {
+        tests = readJSON(options.tests, defaults.tests);
+    }
+    
     if (!options.results && !options.resultIds) {
         check.assert.array(tests, 'invalid option `tests`');
     }
